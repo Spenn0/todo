@@ -1,0 +1,14 @@
+.todo-container {
+  width: 80%;
+  height: 80%;
+  border: 1px solid black;
+}
+.card {
+  width: 400px;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+}
+
+.checked {
+}
