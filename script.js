@@ -21,6 +21,8 @@ let cross = document.querySelector("#cross");
 let moon = document.querySelector("#moon");
 let sun = document.querySelector("#sun");
 
+let x = document.querySelector(".x");
+
 let all = document.querySelector(".all");
 let active = document.querySelector(".active");
 let complete = document.querySelector(".complete");
@@ -33,12 +35,13 @@ const display = () => {
     let card = document.createElement("div");
     card.classList.add("card");
     let itemParagraph = document.createElement("p");
-    let deleteButton = document.createElement("img"[`${cross}`]);
-    let checkButton = document.createElement("img"[`${check}`]);
+    // let deleteButton = document.createElement("img"[`${cross}`]);
+    let deleteButton = document.createElement("p"[`${x}`]);
+    // let checkButton = document.createElement("img"[`${check}`]);a
     deleteButton.classList.add("delete");
     deleteButton.setAttribute("data-index", index);
     itemParagraph.textContent = wombo.verb;
-    card.append(itemParagraph, deleteButton, checkButton);
+    card.append(itemParagraph, deleteButton);
     todoContainer.append(card);
   });
 };
@@ -84,13 +87,22 @@ todoContainer.addEventListener("click", (e) => {
 // THIS FUNCTION CAN ALSO ADD A CLASS TO THE 'VERB' PORTION OF THE SELECTED ITEM TO GRAY IT OUT AND LINETHROUGH
 
 // THIS IS A FUNCTION TO SHOW (FILTER) ALL OF THE ACTIVE TODOS
-active.addEventListener("click", (e) => {});
+active.addEventListener("click", (e) => {
+  console.log(e);
+  let result = items.filter((item) => item.checked === false);
+  console.log(result);
+});
 
 // THIS IS A FUNCTION TO SHOW (FILTER) ALL OF THE COMPLETED TODOS
-// complete.addEventListener("click",(e)=>{
-// })
+complete.addEventListener("click", (e) => {
+  console.log(e);
+  let result = items.filter((item) => item.checked === true);
+  console.log(result);
+});
 //THIS IS A FUNCTION TO FILTER ALL OF THE TODOS
-// all.addEventListener("click", (e) => {
-//   console.log(e);
-
-// });
+all.addEventListener("click", (e) => {
+  console.log(e);
+  let result = items;
+  console.log(result);
+  return result;
+});
