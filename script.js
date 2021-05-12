@@ -26,7 +26,7 @@ let active = document.querySelector(".active");
 let complete = document.querySelector(".complete");
 
 //HERE'S A FUNCTION THAT CREATES CARDS ON THE DOM FOR EACH ITEM IN THE ARRAY
-// I'M CURRENTLY TRYING TO ADD THE SVGS BUT THEY'RE GIVING ME A TOUGH TIME; THE DELETE BUTTON AND CHECKED BUTTON.
+// I'M CURRENTLY TRYING TO ADD THE SVGS BUT THEY'RE GIVING ME A TOUGH TIME; THE DELETE BUTTON AND CHECKED BUTTON.`
 const display = () => {
   todoContainer.innerHTML = "";
   items.forEach((wombo, index) => {
