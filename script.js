@@ -68,23 +68,41 @@ todoForm.addEventListener("submit", (event) => {
   todoForm.reset();
   items.push(newObject);
   display();
-  console.log(items);
-  formContainer.style.display = "none";
+  // console.log(items);
+  // formContainer.style.display = "none";
 });
 
 // THIS IS A FUNCTION TO DELETE A TODO IF ITS 'X' IS CLICKED
 todoContainer.addEventListener("click", (e) => {
-  console.log(e);
-  if (e.target.classlist.contains("delete")) {
-    let index = e.target.getAttribute("data-index");
+  let index = e.target.getAttribute("data-index");
+  if (e.target.className === "delete") {
     items.splice(index, 1);
     display();
+  } else {
+    console.log(index);
   }
 });
 
 // ADD A FUNCTION THAT FLIPS THE ITEM'S 'CHECKED' VALUE TO TRUE
 // THIS IS CONSIDERED THE 'CHECK' FUNCTION.
 // THIS FUNCTION CAN ALSO ADD A CLASS TO THE 'VERB' PORTION OF THE SELECTED ITEM TO GRAY IT OUT AND LINETHROUGH
+// todoContainer.addEventListener("click", (e) => {
+//   console.log(e.target);
+//   e.target.classList("check-background")
+//     ? e.target.classList.remove("check-background")
+//     : e.target.classList.add("check-background");
+//   //  else if (e.target.className === "check-background") {
+//   //   e.target.classList.remove("check-background");
+//   // }
+// });
+todoContainer.addEventListener("click", (e) => {
+  console.log(e.target);
+  if (e.target.className === "check-background") {
+    e.target.classList.remove("check-background");
+  } else {
+    e.target.classList.add("check-background");
+  }
+});
 
 // THIS IS A FUNCTION TO SHOW (FILTER) ALL OF THE ACTIVE TODOS
 active.addEventListener("click", (e) => {
@@ -94,11 +112,11 @@ active.addEventListener("click", (e) => {
 });
 
 // THIS IS A FUNCTION TO SHOW (FILTER) ALL OF THE COMPLETED TODOS
-complete.addEventListener("click", (e) => {
-  console.log(e);
-  let result = items.filter((item) => item.checked === true);
-  console.log(result);
-});
+// complete.addEventListener("click", (e) => {
+//   console.log(e);
+//   let result = items.filter((item) => item.checked === true);
+//   console.log(result);
+// });
 //THIS IS A FUNCTION TO FILTER ALL OF THE TODOS
 all.addEventListener("click", (e) => {
   console.log(e);

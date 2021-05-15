@@ -24,4 +24,8 @@
   margin-left: 15px;
   border-radius: 50%;
   border: 1px solid gray;
+  /* background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)); */
+}
+.check-background {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
