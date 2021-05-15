@@ -16,13 +16,7 @@ let items = [
 ];
 let todoForm = document.querySelector(".todo-form");
 let todoContainer = document.querySelector(".todo-container");
-let check = document.querySelector("#check");
-let cross = document.querySelector("#cross");
-let moon = document.querySelector("#moon");
-let sun = document.querySelector("#sun");
-
 let x = document.querySelector(".x");
-
 let all = document.querySelector(".all");
 let active = document.querySelector(".active");
 let complete = document.querySelector(".complete");
@@ -35,13 +29,19 @@ const display = () => {
     let card = document.createElement("div");
     card.classList.add("card");
     let itemParagraph = document.createElement("p");
-    // let deleteButton = document.createElement("img"[`${cross}`]);
-    let deleteButton = document.createElement("p"[`${x}`]);
-    // let checkButton = document.createElement("img"[`${check}`]);a
+    let deleteButton = document.createElement("img");
+    let checkButton = document.createElement("img");
+    deleteButton.setAttribute("src", "todo-app-main/images/icon-cross.svg");
     deleteButton.classList.add("delete");
+    //idk if i need this
     deleteButton.setAttribute("data-index", index);
+    checkButton.setAttribute("src", "todo-app-main/images/icon-check.svg");
+    checkButton.classList.add("check");
+    //idk if i need this either
+    checkButton.setAttribute("data-index", index);
+    console.log(deleteButton);
     itemParagraph.textContent = wombo.verb;
-    card.append(itemParagraph, deleteButton);
+    card.append(checkButton, itemParagraph, deleteButton);
     todoContainer.append(card);
   });
 };
