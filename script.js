@@ -29,6 +29,7 @@ const display = () => {
     let card = document.createElement("div");
     card.classList.add("card");
     let itemParagraph = document.createElement("p");
+    itemParagraph.classList.add("text");
     let deleteButton = document.createElement("img");
     let checkButton = document.createElement("img");
     deleteButton.setAttribute("src", "todo-app-main/images/icon-cross.svg");
@@ -86,6 +87,29 @@ todoContainer.addEventListener("click", (e) => {
 // ADD A FUNCTION THAT FLIPS THE ITEM'S 'CHECKED' VALUE TO TRUE
 // THIS IS CONSIDERED THE 'CHECK' FUNCTION.
 // THIS FUNCTION CAN ALSO ADD A CLASS TO THE 'VERB' PORTION OF THE SELECTED ITEM TO GRAY IT OUT AND LINETHROUGH
+
+// document.querySelector(".check").addEventListener("click", (e) => {
+//   items.forEach((wombo, index) => {
+//     if (wombo.checked === false) {
+//       wombo.checked === true;
+//     } else {
+//       wombo.checked === false;
+//     }
+//     console.log(wombo.checked);
+//   });
+// });
+
+// document.querySelector(".check").addEventListener("click", (e) => {
+//   let thing = e.target.parentNode;
+//   console.log(thing);
+//   if (items.checked === false) {
+//     items.checked === true;
+//   } else if (items.checked === true) {
+//     items.checked === false;
+//   }
+//   console.log(items.checked);
+// });
+
 // todoContainer.addEventListener("click", (e) => {
 //   console.log(e.target);
 //   e.target.classList("check-background")
@@ -95,14 +119,34 @@ todoContainer.addEventListener("click", (e) => {
 //   //   e.target.classList.remove("check-background");
 //   // }
 // });
+
+// todoContainer.addEventListener("click", (e) => {
+//   console.log(e.target.classList);
+//   if (e.target.classList.contains("check")) {
+//     e.target.classList.add("check-background");
+//   } else if (e.target.classList.contains("check-background check")) {
+//     e.target.classList.remove("check-background");
+//   }
+//   console.log(e.target);
+// });
+
 todoContainer.addEventListener("click", (e) => {
-  console.log(e.target);
-  if (e.target.className === "check-background") {
-    e.target.classList.remove("check-background");
-  } else {
-    e.target.classList.add("check-background");
+  console.log(e.target.classList);
+  let index = e.target["data-index"];
+  if (e.target.classList.contains("check")) {
+    e.target.classList.toggle("check-background");
+  } else if (e.target.classList.contains("check-background check")) {
+    e.target.classList.toggle("check-background");
   }
+  // items["data-index"].checked = items["data-index"].checked ? false : true;
+  console.log(items[index]);
 });
+
+// function completeToDo(element) {
+//   element.classList.toggle("check-background");
+//   element.classList.toggle("check");
+//   element.parentNode.querySelector(".text").classList.toggle("line-through");
+// }
 
 // THIS IS A FUNCTION TO SHOW (FILTER) ALL OF THE ACTIVE TODOS
 active.addEventListener("click", (e) => {
