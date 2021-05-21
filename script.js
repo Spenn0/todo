@@ -138,9 +138,13 @@ todoContainer.addEventListener("click", (e) => {
   } else if (e.target.classList.contains("check-background check")) {
     e.target.classList.toggle("check-background");
   }
-  // items["data-index"].checked = items["data-index"].checked ? false : true;
-  console.log(items[index]);
+  e.target.parentNode.querySelector(".text").classList.toggle(".line-through");
+  items.index.checked = items.index.checked ? false : true;
+  console.log(items.index);
+  console.log(e.target);
 });
+
+function toDoSwitch(element) {}
 
 // function completeToDo(element) {
 //   element.classList.toggle("check-background");
